@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="images/logo_2.svg" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Venus</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="hero">
+      <!-- <img id="rock-left" class="rock-left" src="images/sm-rock-left.png" alt="">
+      <img id="rock-right" class="rock-right" src="images/sm-rock-left.png" alt=""> -->
+      <img src="images/logo.svg" alt="" class="logo" />
+        <a class="hidden" id="design" href="http://portfolio-design.vns.agency/" target="_blank" rel="noopener noreferrer"></a>
+        <a class="hidden" id="web" href="http://portfolio-web.vns.agency/" target="_blank" rel="noopener noreferrer"></a>
+        <a class="hidden" id="marketing" href="http://portfolio-marketing.vns.agency/" target="_blank" rel="noopener noreferrer"></a>
+      
+      <div class="rock">
+        <div class="orbit orbit-1"></div>
+        <div class="orbit orbit-2"></div>
+        <div class="orbit orbit-3"></div>
+        <div class="orbit orbit-4"></div>
+        <div class="orbit orbit-5"></div>
+        <div class="orbit orbit-6"></div>
+        <div class="orbit orbit-7"></div>
+        <div class="orbit orbit-8"></div>
+        <div class="orbit orbit-9"></div>
+        <!--  <img src="images/big-rock.png" alt=""> -->
+      </div>
+      <div class="content">
+        <h1>Find Our Work Here</h1>
+        <button  onclick="do_dl(2);">Solutions</button>
+        <button  onclick="do_dl(0);">Marketing</button>
+        <button  onclick="do_dl(1);">Creative</button>
+
+      </div>
+      <!-- stars -->
+      <div class="star star-1"></div>
+      <div class="star star-2"></div>
+      <div class="star star-3"></div>
+      <div class="star star-4"></div>
+      <div class="star star-5"></div>
+      <div class="star star-6"></div>
+      <!-- clouds -->
+
+      <!-- orbits -->
+      <div class="orbit orbit-1"></div>
+      <div class="orbit orbit-2"></div>
+      <div class="orbit orbit-3"></div>
+      <div class="orbit orbit-4"></div>
+      <div class="orbit orbit-5"></div>
+      <div class="orbit orbit-6"></div>
+      <div class="orbit orbit-7"></div>
+      <div class="orbit orbit-8"></div>
+      <div class="orbit orbit-9"></div>
+      <!-- main planet -->
+      <div class="orbit right orbit-1"></div>
+      <div class="orbit right orbit-2"></div>
+      <div class="orbit right orbit-3"></div>
+      <div class="orbit right orbit-4"></div>
+      <div class="orbit right orbit-5"></div>
+      <div class="orbit right orbit-6"></div>
+      <div class="orbit right orbit-7"></div>
+      <div class="orbit right orbit-8"></div>
+      <div class="orbit right orbit-9"></div>
+      <div class="orbit right orbit-10"></div>
+      <div class="orbit right orbit-11"></div>
+      <div class="orbit right orbit-12"></div>
+      <div class="orbit right orbit-13"></div>
+    </div>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/2.1.3/parallax.min.js"></script> -->
+
+    <!-- <script src="js/index.js"></script> -->
+    <script>
+      function download_files(files) {
+  function download_next(i) {
+    if (i >= files.length) {
+      return;
+    }
+    var a = document.createElement('a');
+    a.href = files[i].download;
+    debugger
+    a.target = '_blank';
+      //  a.setAttribute("target", "_parent");
+
+    // Use a.download if available, it prevents plugins from opening.
+    if ('download' in a) {
+      a.download = files[i].filename;
+    }
+    // Add a to the doc for click to work.
+    (document.body || document.documentElement).appendChild(a);
+    if (a.click) {
+      a.click(); // The click method is supported by most browsers.
+    }  else {
+    window.open(files[i].download);
+ }
+    // Delete the temporary link.
+    a.parentNode.removeChild(a);
+    // Download the next file with a small timeout. The timeout is necessary
+    // for IE, which will otherwise only download the first file.
+    setTimeout(function() {
+       download_next(i + 1);
+     }, 2000);
+  }
+  // Initiate the first download.
+//   window.open("http://portfolio-marketing.vns.agency/","test1");
+// window.open("http://www.microsoft.com/","test2");
+// window.open("http://www.microsoft.com/","test3");
+  //  download_next(0);
+  let i =1
+ const win1=  window.open(files[0].download)
+   const win2=  window.open(files[1].download, '_blank')
+  
+   const win3=  window.open(files[2].download)
+  // document.getElementById('marketing').click();
+  // setTimeout(() => {
+  // document.getElementById('design').click();
+    
+  // }, 2000);
+  // document.getElementById('web').click();
+  try {
+        win1.focus();   
+        win3.focus();   
+         win2.focus();   
+    } catch (e) {
+        alert("Pop-up Blocker is enabled! اضبط اعدادات المتصفح لفتح النوافذ المنبثقة.");
+    }
+  // const dd=  setInterval(function() {
+  //  if(i<files.length){
+  //   window.open(files[i].download)
+  //   i= i+1
+  //  }else{
+  //    clearInterval(dd)
+  //  }
+  //   }, 2000);
+    
+}
+function do_dl(i) {
+    // download_files([
+    //   { download: "http://portfolio-marketing.vns.agency/", filename: "marketing.pdf" },
+    //   { download: "http://portfolio-design.vns.agency/", filename: "design.pdf" },
+    //   { download: "http://portfolio-web.vns.agency/", filename: "web.pdf" },
+    // ]);
+    const files = [
+      { download: "http://portfolio-marketing.vns.agency/", filename: "marketing.pdf" },
+      { download: "http://portfolio-design.vns.agency/", filename: "design.pdf" },
+      { download: "http://portfolio-web.vns.agency/", filename: "web.pdf" },
+    ]
+    window.open(files[i].download)
+  };
+      // var urls = [
+      //   "http://portfolio-marketing.vns.agency/",
+      //   "http://portfolio-design.vns.agency/",
+      //   "http://portfolio-web.vns.agency/",
+      // ];
+
+      // var interval = setInterval(download, 300, urls);
+
+      // function download(urls) {
+      //   var url = urls.pop();
+
+      //   var a = document.createElement("a");
+      //   a.setAttribute("href", url);
+      //   a.setAttribute("download", "");
+      //   a.setAttribute("target", "_blank");
+      //   a.click();
+
+      //   if (urls.length == 0) {
+      //     clearInterval(interval);
+      //   }
+      // }
+    </script>
+  </body>
+</html>
